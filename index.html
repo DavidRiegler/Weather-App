@@ -40,17 +40,14 @@
         </div>
     </div>
 
+    <script src="config.js"></script>
     <script>
-
-        const apiKey = "a14104922e0b498b155a3691e75fec78";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
-
         const searchBox = document.querySelector(".search input");
         const searchBtn = document.querySelector(".search button");
         const weatherIcon = document.querySelector(".weather-icon");
 
         async function checkWeather(city) {
-            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+            const response = await fetch(config.apiUrl + city + `&appid=${config.apiKey}`);
 
             if (response.status == 404) {
                 document.querySelector(".error").style.display = "block";
